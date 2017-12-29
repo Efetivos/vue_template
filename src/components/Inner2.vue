@@ -7,5 +7,21 @@
 </div>
 </template>
 
-<script scoped type="script" src="./js/js-inner2.js"></script>
+<script>
+import { innerMixin } from './js/innerMixin';
+
+export default {
+ mixins: [innerMixin],
+ 
+     created() {
+       //Scrolls to top when view is displayed
+   			window.scrollTo(0, 0)
+   			window.document.title = "FASHION 2  | EFETIVOS  "
+   },
+   mounted () {
+     TweenMax.to('a',1,{color:'#ff0000'})
+   }
+}
+
+</script>
 <style lang="scss" scoped src="./css/style-inner2.scss"></style>

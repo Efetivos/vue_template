@@ -72,10 +72,7 @@ module: {
 
 ### Utilizar SCSS & SASS dentro do SFC 
  ``` bash
-
  Instalar:
-npm install --save-dev node-sass
-npm install sass-loader --save-dev
 npm install sass-resources-loader --save-dev
 
 Utilizar Lang:
@@ -93,6 +90,8 @@ import ScrollMagic from 'scrollmagic'
 import 'ScrollMagicGSAP'
 import  nicescroll from 'jquery.nicescroll'
 import imagesLoaded from 'imagesloaded'
+import  Draggable  from 'gsap/Draggable'
+import  ThrowPropsPlugin from 'gsap/ThrowPropsPlugin'
  ```
 
 ## Importar Plugins GSAP 
@@ -149,21 +148,6 @@ beforeRouteLeave(to, from, next) {
   }
   ```
 
-> Before Rooute Enter
- ``` bash
-        beforeRouteEnter (to, from, next) {
-          if (from.name === 'nameOfComponent'){
-              next(vm => {
-
-                //Do Something
-
-              });
-              } else {
-                  next();
-              }
-          }// End beforeRouteEnter
-  ```
-
 ## Transição diferente para cada Botão Clicado 
 > Colocar nome da Rota no main.js (Router Import) e fazer condição (if) dentro do beforeRouteLeave
  ``` bash
@@ -200,6 +184,12 @@ created() {
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
+
+##### LOCAWEB - NAO REMOVER #####
+AddHandler php56-script .php
+suPHP_ConfigPath /home/marcelocalcados/
+##### LOCAWEB - NAO REMOVER #####
+
 ```
 
 ## Remover "#" hashtag dos link | html5 mode history
@@ -229,5 +219,52 @@ export default {
     'mymenu': MyMenu
   },
 
-  ..
+```
+
+## Mixins | Reutilizar JS em outros components 
+> Criar um arquivo JS | ex.: innerMixin.js
+> Colocar export const innerMixin = { //Code goes Here ... }
+ ``` bash
+ //IMPORTAR LIBS ANTES
+import { TweenMax, TimelineMax } from 'gsap'
+import $ from 'jquery'
+import Mymenu from '../Mymenu.vue'
+
+export const innerMixin = {
+
+  components: {
+    'mymenu': Mymenu,
+    'transition': Transition
+  },
+
+  mounted(){
+  TweenMax.to('#div',1,{color:'red'})
+  },
+    beforeRouteLeave(to, from, next) {    
+     //...
+    }
+    
+ }//Close export const
+  
+```
+
+> Importar mixin dentro da tag Script nos Components
+ ``` bash
+ <script>
+import { innerMixin } from './js/innerMixin';
+
+export default {
+  mixins: [innerMixin],
+  
+	  created() {
+        //Scrolls to top when view is displayed
+				window.scrollTo(0, 0)
+				window.document.title = "FASHION 2  | EFETIVOS  "
+    },
+    mounted () {
+      TweenMax.to('a',1,{color:'red'})
+    }
+}
+
+</script>
 ```
