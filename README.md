@@ -268,3 +268,20 @@ export default {
 
 </script>
 ```
+
+
+> Css /SCSS Component
+ ``` bash
+<style lang="scss" scoped>
+@import './css/alias-mixins'; 
+@import './css/normal-reset'; 
+@import './css/style-inner';
+
+h1 {
+    color: aqua;
+    transform: rotate(90deg)
+}
+</style>
+
+</script>
+```
