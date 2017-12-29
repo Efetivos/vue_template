@@ -1,0 +1,16 @@
+@import 'normal-reset';
+@import 'alias-mixins';
+$color: rgb(0, 70, 64);
+
+.body {
+    @include flex-center;
+    background: $color;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 46px;
+    @include sans;   
+}
