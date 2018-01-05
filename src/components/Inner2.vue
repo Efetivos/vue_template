@@ -2,6 +2,9 @@
 <div class="body">
 <mymenu></mymenu>
 
+<div class="bg"></div>
+<div id="div-test"></div>
+
 <h1> INNER 2</h1>
 
 </div>
@@ -9,9 +12,10 @@
 
 <script>
 import { innerMixin } from './js/innerMixin';
+import { pixiMixin } from './js/pixiMixin';
 
 export default {
- mixins: [innerMixin],
+ mixins: [innerMixin, pixiMixin],
  
      created() {
        //Scrolls to top when view is displayed

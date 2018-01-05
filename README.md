@@ -92,6 +92,7 @@ import  nicescroll from 'jquery.nicescroll'
 import imagesLoaded from 'imagesloaded'
 import  Draggable  from 'gsap/Draggable'
 import  ThrowPropsPlugin from 'gsap/ThrowPropsPlugin'
+import { container } from 'pixi.js'
  ```
 
 ## Importar Plugins GSAP 
