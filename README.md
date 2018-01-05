@@ -269,7 +269,6 @@ export default {
 </script>
 ```
 
-
 > Css /SCSS Component
  ``` bash
 <style lang="scss" scoped>
