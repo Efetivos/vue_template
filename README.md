@@ -37,6 +37,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
  Jquery: npm install --save-dev jquery
  ScrollMagic: npm install --save-dev scrollmagic
  Jquery.Nicescroll: npm i  --save-dev  jquery.nicescroll
+ PreloadJs: npm install preload-js --save-dev
+ PixiJs: npm install pixi.js --save-dev
  (Verificar se todos constam no  Package.json)
  ```
 
@@ -73,7 +75,7 @@ module: {
 ### Utilizar SCSS & SASS dentro do SFC 
  ``` bash
  Instalar:
-npm install sass-resources-loader --save-dev
+npm install sass-loader node-sass --save-dev
 
 Utilizar Lang:
 <style lang="scss" scoped src="./css/style-contato.scss">
@@ -91,8 +93,9 @@ import 'ScrollMagicGSAP'
 import  nicescroll from 'jquery.nicescroll'
 import imagesLoaded from 'imagesloaded'
 import  Draggable  from 'gsap/Draggable'
-import  ThrowPropsPlugin from 'gsap/ThrowPropsPlugin'
-import { container } from 'pixi.js'
+import  ThrowPropsPlugin from 'gsap/ThrowPropsPlugin'	
+import createjs from 'preload-js'
+import 'pixi.js'
  ```
 
 ## Importar Plugins GSAP 
@@ -284,4 +287,143 @@ h1 {
 </style>
 
 </script>
+```
+
+
+## Dynamic Router-link / Change onClick
+> HTML
+ ``` bash
+<router-link :to="{path: '/'+name}" class="link-dynamic"> LINK DYNAMIC</router-link>
+    <button @click="sobre"> Sobre </button>
+    <button @click="services"> Services </button>
+    <button @click="contato"> Contato </button>
+```
+
+> JS
+ ``` bash
+export default {
+  data (){
+    return {
+      name: ' '
+    }
+  },
+  methods:{
+    sobre:function (){
+      this.name= 'sobre'; 
+      this.$router.push({ path: '/sobre' })
+    },
+    
+    services:function (){
+      this.name= 'services';      
+    },
+    
+    contato:function (){
+      this.name= 'contato';      
+    },
+    
+    home:function (){
+      this.name= '';      
+    }
+  }
+}
+```
+
+## Preload All Images
+> main.js - On Scopo
+ ``` bash
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import { TweenMax, TimelineMax } from 'gsap'
+import $ from 'jquery'
+import createjs from 'preload-js'
+
+function importAll(r) {
+  return r.keys().map(r);
+}
+const images = importAll(require.context('./components/images', false, /\.(png|jpe?g|svg)$/));
+
+
+
+
+//PreloadJs
+function loadAllimg() {
+  var queue = new createjs.LoadQueue(),
+    $state = $('#state'),
+    $progress = $('#progress'),
+    $progressbar = $('#progressbar .bar');
+
+
+  queue.on('complete', onComplete);
+  queue.on('error', onError);
+  queue.on('fileload', onFileLoad);
+  queue.on('fileprogress', onFileProgress);
+  queue.on('progress', onProgress);
+
+
+  queue.loadManifest([
+    {
+      id: '1',
+      src: images[0]
+    }, {
+      id: '2',
+      src: images[1]
+    }, {
+      id: '3',
+      src: images[2]
+    }, {
+      id: '4',
+      src: images[3]
+    }
+  ]);
+
+
+  function onComplete(event) {
+
+    console.log('Complete', event);
+    TweenMax.to('p', 3, { rotation: 360, onComplete: goRouter })
+    function goRouter() {
+      //  $('.sobre-btn').trigger('click')
+    }
+  }
+
+  function onError(event) {
+
+  }
+
+  function onFileLoad(event) {
+  }
+
+  function onFileProgress(event) {
+  }
+
+  var count = 0;
+  function onProgress(event) {
+    var progress = Math.round(event.loaded * 100);
+
+    TweenMax.set('#progressbar .bar', { width: progress + '%' })
+
+    $('h1 span').text(progress)
+    console.log(progress);
+  }
+}
+loadAllimg();
+```
+
+> No js do Component
+ ``` bash
+unction importAll(r) {
+  return r.keys().map(r);
+}
+const images = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/));
+
+
+//SET ALL IMAGES ON JQUERY
+var i = 0;
+$(document).ready(function(){
+    $(".photos").each(function(i){
+        i++
+        $(this).css({'background-image':'url('+images[i]+')'});
+    });
+});
 ```
