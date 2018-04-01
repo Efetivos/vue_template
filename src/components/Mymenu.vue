@@ -11,7 +11,7 @@
 	<ul class="box-dev">
 		<li class="direitos">TODOS DIREITOS RESERVADOS</li>
 		<li class="text-dev-menu">desenvolvimento</li>
-		<a href="http://efetivos.com" target="_blank"><img class="efet-logo-menu" src="./images/LOGOEFE_Flat.png" alt="Efetivos Comunicação Visual"></a>
+		<a href="http://efetivos.com" target="_blank"><img class="efet-logo-menu" src="./images/logo-efet-branco.svg" alt="Efetivos Comunicação Visual"></a>
 	</ul>
 	
 </div>

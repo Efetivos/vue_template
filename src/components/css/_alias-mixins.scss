@@ -10,6 +10,10 @@
 	font-family: 'Tulpen One', serif;
 }
 
+@mixin resptex {
+    font-size: calc(46px + 54 * ((53vw + 53vh) - 520px) / 820);
+}
+
 @mixin mobile {
 	@media only screen and (max-width: 960px) {
 		@content;		

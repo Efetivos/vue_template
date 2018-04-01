@@ -2,6 +2,10 @@
 import { TweenMax, TimelineMax } from 'gsap'
 import { container } from 'pixi.js'
 import $ from 'jquery'
+function importAll(r) {
+  return r.keys().map(r);
+}
+const images = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/));
 
 export const pixiMixin = {
 
@@ -19,13 +23,14 @@ console.log(divW);
 
 myView.appendChild(app.view);
 
-var bg = PIXI.Sprite.fromImage('http://unsplash.it/1093');
+var bg = PIXI.Sprite.fromImage(images[2]);
 
 bg.anchor.set(0.5);
 bg.width = divW;
 bg.x = app.screen.width / 2;
 bg.y = app.screen.height / 4;
 
+//$('.bg').css({'background-image':'url('+images[2]+')'});
 app.stage.addChild(bg);
 
 var style = new PIXI.TextStyle({
@@ -58,8 +63,7 @@ TweenMax.to( basicText, 2, {x:100, repeat:-1, yoyo:true})
 
   
 
-        TweenMax.to('h1',1,{color:'red'});
-        console.log(pixi);
+        TweenMax.to('h1, a',1,{color:'#fff', zIndex:'1'});
         
 
  }
