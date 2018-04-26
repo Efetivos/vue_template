@@ -131,3 +131,61 @@
 
 
 
+.e-white {
+	color: #fff;
+}
+.e-flex {
+    @include flex-center;
+}
+.e-flex-col {
+    @include flex-center-col;
+}
+.e-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.e-rel {
+    position: relative;
+}
+.e-abs {
+    position: absolute;
+}
+.e-fixed {
+	position: fixed;
+}
+.e-wp {
+    width: 100%;
+}
+.e-hp {
+    height: 100%;
+}
+.e-85 {
+    width: 85vw;
+}
+.e-wvw {
+    width: 100vw;
+}
+
+.e-hvh {
+    height: 100vh;
+}
+.e-dn {
+    display: none;
+}
+
+.e-img-fit {
+    object-fit: cover;
+}
+
+.e-serif {
+    font-family: 'Cormorant', serif;
+}
+.e-sans {
+    font-family: 'Poppins', sans-serif;    
+    font-weight: bold;
+
+}
+
+

@@ -1,6 +1,6 @@
 //IMPORTAR LIBS ANTES
 import { TweenMax, TimelineMax } from 'gsap'
-import { container } from 'pixi.js'
+import 'pixi.js'
 import $ from 'jquery'
 function importAll(r) {
   return r.keys().map(r);
