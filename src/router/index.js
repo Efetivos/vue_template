@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Mymenu from '@/components/Mymenu'
 import Inner from '@/components/Inner'
 import Inner2 from '@/components/Inner2'
+import Three from '@/components/Three'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       component: Mymenu
     },
     {
+      path: '/',
+      name: 'Three',
+      component: Three
+    },
+    {
       path: '/inner',
       name: 'Inner',
       component: Inner
@@ -26,7 +32,7 @@ export default new Router({
       component: Inner2
     },
     {
-      path: '/',
+      path: '/home',
       name: 'Home',
       component: Home
     },

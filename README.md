@@ -39,8 +39,34 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
  Jquery.Nicescroll: npm i  --save-dev  jquery.nicescroll
  PreloadJs: npm install preload-js --save-dev
  PixiJs: npm install pixi.js --save-dev
+ ThreeJs: npm i three --save-dev
+ OrbitControls Three: npm i three-orbit-controls --save-dev
+ Glslify: npm install  glslify-loader raw-loader --save-dev
+ Glslify Babel: npm i -S glslify babel-plugin-glslify
+
  (Verificar se todos constam no  Package.json)
  ```
+
+  
+### Importar/inserir Bibliotecas  dentro do <script>
+ ``` bash
+import { TweenMax, TimelineMax } from 'gsap'
+import SplitText from 'gsap/SplitText'
+import DrawSVGPluginfrom from 'gsap/DrawSVGPlugin'
+import $ from 'jquery'
+import ScrollMagic from 'scrollmagic'
+import 'ScrollMagicGSAP'
+import  nicescroll from 'jquery.nicescroll'
+import imagesLoaded from 'imagesloaded'
+import  Draggable  from 'gsap/Draggable'
+import  ThrowPropsPlugin from 'gsap/ThrowPropsPlugin'	
+import createjs from 'preload-js'
+import 'pixi.js'
+import * as THREE from 'three';
+var OrbitControls = require('three-orbit-controls')(THREE);
+var glsl = require('glslify')
+ ```
+ 
 
  ### gsap.animation(ScrollMagic)
  >Install imports-loader:
@@ -81,22 +107,7 @@ Utilizar Lang:
 <style lang="scss" scoped src="./css/style-contato.scss">
  ```
 
- 
-### Importar/inserir Bibliotecas  dentro do <script>
- ``` bash
-import { TweenMax, TimelineMax } from 'gsap'
-import SplitText from 'gsap/SplitText'
-import DrawSVGPluginfrom from 'gsap/DrawSVGPlugin'
-import $ from 'jquery'
-import ScrollMagic from 'scrollmagic'
-import 'ScrollMagicGSAP'
-import  nicescroll from 'jquery.nicescroll'
-import imagesLoaded from 'imagesloaded'
-import  Draggable  from 'gsap/Draggable'
-import  ThrowPropsPlugin from 'gsap/ThrowPropsPlugin'	
-import createjs from 'preload-js'
-import 'pixi.js'
- ```
+
 
 ## Importar Plugins GSAP 
 > Criar na pasta gsap (node_modules) pasta com o nome do Plugin e colocar Plugin (uncompressed)

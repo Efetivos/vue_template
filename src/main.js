@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { TweenMax, TimelineMax } from 'gsap'
+import { TweenMax } from 'gsap'
 import $ from 'jquery'
 import createjs from 'preload-js'
 

@@ -1,4 +1,4 @@
-import { TweenMax, TimelineMax } from 'gsap'
+import { TweenMax } from 'gsap'
 import $ from 'jquery'
 /*import ScrollMagic from 'scrollmagic'
 import 'ScrollMagicGSAP'

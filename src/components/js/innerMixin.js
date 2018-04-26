@@ -1,5 +1,5 @@
 //IMPORTAR LIBS ANTES
-import { TweenMax, TimelineMax } from 'gsap'
+import { TweenMax } from 'gsap'
 import $ from 'jquery'
 import Mymenu from '../Mymenu.vue'
 
