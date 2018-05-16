@@ -43,7 +43,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
  OrbitControls Three: npm i three-orbit-controls --save-dev
  Glslify: npm install  glslify-loader raw-loader --save-dev
  Glslify Babel: npm i -S glslify babel-plugin-glslify
- npm i prerender-spa-plugin --save-dev
+ PreRenderSPA: npm i prerender-spa-plugin --save-dev
 
  (Verificar se todos constam no  Package.json)
  ```
@@ -106,6 +106,26 @@ npm install sass-loader node-sass --save-dev
 
 Utilizar Lang:
 <style lang="scss" scoped src="./css/style-contato.scss">
+ ```
+
+### Utilizar PUG
+> // webpack.config.js -> module.rules
+ ``` bash
+ // webpack.config.js -> module.rules
+{
+  test: /\.pug$/,
+  loader: 'pug-plain-loader'
+}
+
+ Instalar:
+npm install -D pug pug-plain-loader
+
+
+<template lang="pug">
+div
+  h1 Hello world!
+</template>
+
  ```
 
 
