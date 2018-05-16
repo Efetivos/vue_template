@@ -17,7 +17,7 @@ export default new Router({
       component: Mymenu
     },
     {
-      path: '/',
+      path: '/three',
       name: 'Three',
       component: Three
     },
@@ -32,7 +32,7 @@ export default new Router({
       component: Inner2
     },
     {
-      path: '/home',
+      path: '/',
       name: 'Home',
       component: Home
     },

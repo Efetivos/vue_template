@@ -1,11 +1,12 @@
-<template>
-
-<div class="container-all body">
-	<mymenu></mymenu>
+<template lang="pug">
+.container-all.body
+	mymenu
 	
-		<h1> HOME </h1>
+	h1 HOME
+	h1 HOME2
+		router-link.roouter(to="/three" tag="button") LINK
 
-</div>
+
 </template>
 
 <script scoped type="script" src="./js/js-home.js"></script>

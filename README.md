@@ -44,6 +44,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
  Glslify: npm install  glslify-loader raw-loader --save-dev
  Glslify Babel: npm i -S glslify babel-plugin-glslify
  PreRenderSPA: npm i prerender-spa-plugin --save-dev
+ Pug:  npm install pug-loader --save-dev
+       npm install -D pug
 
  (Verificar se todos constam no  Package.json)
  ```
@@ -109,23 +111,22 @@ Utilizar Lang:
  ```
 
 ### Utilizar PUG
-> // webpack.config.js -> module.rules
+> // webpack.base.conf.js -> module.rules
  ``` bash
- // webpack.config.js -> module.rules
+ // > // webpack.base.conf.js -> module.rules
 {
   test: /\.pug$/,
   loader: 'pug-plain-loader'
 }
 
  Instalar:
-npm install -D pug pug-plain-loader
-
+ npm install pug-loader --save-dev
+ npm install -D pug
 
 <template lang="pug">
 div
   h1 Hello world!
 </template>
-
  ```
 
 
