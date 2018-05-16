@@ -6,6 +6,7 @@ import router from './router'
 import { TweenMax } from 'gsap'
 import $ from 'jquery'
 import createjs from 'preload-js'
+import VueAnalytics from 'vue-analytics'
 
 function importAll(r) {
   return r.keys().map(r);
@@ -94,4 +95,12 @@ new Vue({
   router,
   template: '<App/>',
   components: { App }
+})
+
+Vue.use(VueAnalytics, {
+  id: 'UA-77246407-1',
+  router,
+  autoTracking: {
+    page: true
+  }
 })

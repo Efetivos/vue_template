@@ -44,6 +44,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
  Glslify: npm install  glslify-loader raw-loader --save-dev
  Glslify Babel: npm i -S glslify babel-plugin-glslify
  PreRenderSPA: npm i prerender-spa-plugin --save-dev
+ VueAnalytics: npm install vue-analytics --save-dev
  Pug:  npm install pug-loader --save-dev
        npm install -D pug
 
@@ -129,6 +130,20 @@ div
 </template>
  ```
 
+### Utilizar PUG
+> // main.js
+ ``` bash 
+import VueAnalytics from 'vue-analytics'
+
+ //Por ultimo no código
+Vue.use(VueAnalytics, {
+  id: 'UA-77246407-1',
+  router,
+  autoTracking: {
+    page: true
+  }
+})
+ ```
 
 
 ## Importar Plugins GSAP 
