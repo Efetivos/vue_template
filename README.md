@@ -43,6 +43,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
  OrbitControls Three: npm i three-orbit-controls --save-dev
  Glslify: npm install  glslify-loader raw-loader --save-dev
  Glslify Babel: npm i -S glslify babel-plugin-glslify
+ npm i prerender-spa-plugin --save-dev
 
  (Verificar se todos constam no  Package.json)
  ```
@@ -220,6 +221,30 @@ export default new Router({
       component: GsapTest
     },
 ```
+
+
+## PreRenderSPA
+> incluir no webpack.prod.conf.js
+ ``` bash
+  const PrerenderSPAPlugin = require('prerender-spa-plugin')
+
+    new PrerenderSPAPlugin(
+      // Path to compiled app
+      path.join(__dirname, '../dist'),
+      // List of endpoints you wish to prerender
+      [ '/', '/gsap', '/intro','/three' ],
+      {
+        // Espera puxar a api
+        captureAfterTime: 10000,
+        ignoreJSErrors: true,
+        phantomPageViewportSize: {
+          width: 1280,
+          height: 720
+        }
+      }
+    )
+```
+
 ## Importar Component dentro do Single File Component
 # ATENÇÃO - COLOCAR CSS SCOPED
 > inserir dentro do Javascript  da página que vai receber o component externo:
