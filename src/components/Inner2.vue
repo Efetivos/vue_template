@@ -28,4 +28,4 @@ export default {
 }
 
 </script>
-<style lang="scss" scoped src="./css/style-inner2.scss"></style>
+<style lang="sass" scoped src="./css/style-inner2.sass"></style>

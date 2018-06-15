@@ -20,4 +20,4 @@
 </template>
 
 <script scoped type="script" src="./js/js-mymenu.js"></script>
-<style lang="scss" scoped src="./css/style-menu.scss"></style>
+<style lang="sass" scoped src="./css/style-menu.sass"></style>

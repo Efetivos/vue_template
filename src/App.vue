@@ -11,4 +11,4 @@
 </template>
 
 <script></script>
-<style lang="scss" src="./components/css/style-app.scss"></style>
+<style lang="sass" src="./components/css/style-app.sass"></style>

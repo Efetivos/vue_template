@@ -24,13 +24,13 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="sass" scoped>
 @import './css/alias-mixins'; 
 @import './css/normal-reset'; 
 @import './css/style-inner';
 
-h1 {
+h1 
     color: aqua;
     transform: rotate(90deg)
-}
+
 </style>
